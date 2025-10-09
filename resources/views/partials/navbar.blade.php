@@ -71,16 +71,30 @@
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
             <img src="{{ asset('assets/images/faces/face28.jpg') }}" alt="profile"/>
+            <span class="d-none d-sm-inline ml-2">{{ auth()->user()->name ?? 'User' }}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
+            <div class="dropdown-item-text">
+              <div class="d-flex">
+                <img src="{{ asset('assets/images/faces/face28.jpg') }}" alt="profile" class="img-sm rounded-circle">
+                <div class="ml-3">
+                  <p class="mb-0 font-weight-medium">{{ auth()->user()->name ?? 'User' }}</p>
+                  <p class="mb-0 text-muted">{{ auth()->user()->email ?? '' }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
               <i class="ti-settings text-primary"></i>
               Settings
             </a>
-            <a class="dropdown-item">
-              <i class="ti-power-off text-primary"></i>
-              Logout
-            </a>
+            <form method="POST" action="{{ route('logout') }}" class="d-inline">
+              @csrf
+              <button type="submit" class="dropdown-item border-0 bg-transparent">
+                <i class="ti-power-off text-primary"></i>
+                Logout
+              </button>
+            </form>
           </div>
         </li>
         <li class="nav-item nav-settings d-none d-lg-flex">

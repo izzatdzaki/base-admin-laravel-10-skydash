@@ -1,11 +1,32 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/dashboard">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#input-data" aria-expanded="false" aria-controls="input-data">
+          <i class="icon-doc menu-icon"></i>
+          <span class="menu-title">Master Data</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="input-data">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="/master-data/tarif">Tarif</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/kelompok-tindakan">Kelompok Tindakan</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/unit">Unit</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/paramedis">Paramedis</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/paramedis-pendamping">Paramedis Pendamping</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/porsi-jp">Porsi 1</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/porsi-jp-tmo">Porsi 2</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/master-data/porsi-cbgs">Porsi 3</a></li>
+          </ul>
+        </div>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="icon-layout menu-icon"></i>
@@ -68,32 +89,8 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-          <i class="icon-head menu-icon"></i>
-          <span class="menu-title">User Pages</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="auth">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
-            <li class="nav-item"> <a class="nav-link" href="/register"> Register </a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
-          <i class="icon-ban menu-icon"></i>
-          <span class="menu-title">Error pages</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="error">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/erro404"> 404 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="/erro500"> 500 </a></li>
-          </ul>
-        </div>
-      </li>
+
+
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/M-Hidayatullah" target="_blank">
           <i class="icon-paper menu-icon"></i>
