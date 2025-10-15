@@ -626,48 +626,49 @@ ensureJQuery(function() {
     });
 
     // Alternative event listener for edit buttons
-document.addEventListener('DOMContentLoaded', function() {
-    // Add click event listeners to all edit buttons
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('button[onclick*="editKelompokTindakan"]')) {
-            e.preventDefault();
-            e.stopPropagation();
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click event listeners to all edit buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('button[onclick*="editKelompokTindakan"]')) {
+                e.preventDefault();
+                e.stopPropagation();
 
-            const button = e.target.closest('button');
-            const onclickAttr = button.getAttribute('onclick');
-            const idMatch = onclickAttr.match(/editKelompokTindakan\((\d+)\)/);
+                const button = e.target.closest('button');
+                const onclickAttr = button.getAttribute('onclick');
+                const idMatch = onclickAttr.match(/editKelompokTindakan\((\d+)\)/);
 
-            if (idMatch) {
-                const id = idMatch[1];
-                editKelompokTindakan(id);
+                if (idMatch) {
+                    const id = idMatch[1];
+                    editKelompokTindakan(id);
+                }
             }
-        }
-    });
-
-    // Add event listener for delete confirmation button
-    document.addEventListener('click', function(e) {
-        if (e.target && e.target.id === 'confirmDeleteBtn') {
-            e.preventDefault();
-            const id = e.target.getAttribute('data-id');
-            if (id) {
-                confirmDelete(id);
-            }
-        }
-    });
-
-    // Ensure buttons are properly initialized
-    const editButtons = document.querySelectorAll('button[onclick*="editKelompokTindakan"]');
-    editButtons.forEach(button => {
-        button.style.cursor = 'pointer';
-        button.style.userSelect = 'none';
-
-        // Add touch-friendly events for mobile
-        button.addEventListener('touchstart', function(e) {
-            this.style.transform = 'scale(0.95)';
         });
 
-        button.addEventListener('touchend', function(e) {
-            this.style.transform = 'scale(1)';
+        // Add event listener for delete confirmation button
+        document.addEventListener('click', function(e) {
+            if (e.target && e.target.id === 'confirmDeleteBtn') {
+                e.preventDefault();
+                const id = e.target.getAttribute('data-id');
+                if (id) {
+                    confirmDelete(id);
+                }
+            }
+        });
+
+        // Ensure buttons are properly initialized
+        const editButtons = document.querySelectorAll('button[onclick*="editKelompokTindakan"]');
+        editButtons.forEach(button => {
+            button.style.cursor = 'pointer';
+            button.style.userSelect = 'none';
+
+            // Add touch-friendly events for mobile
+            button.addEventListener('touchstart', function(e) {
+                this.style.transform = 'scale(0.95)';
+            });
+
+            button.addEventListener('touchend', function(e) {
+                this.style.transform = 'scale(1)';
+            });
         });
     });
 });

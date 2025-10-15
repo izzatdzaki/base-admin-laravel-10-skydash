@@ -44,8 +44,10 @@ class KelompokTindakanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, KelompokTindakan $kelompokTindakan)
+    public function update(Request $request, $id)
     {
+        $kelompokTindakan = KelompokTindakan::findOrFail($id);
+        
         $request->validate([
             'kode_tindakan' => 'required|string|max:50|unique:kelompok_tindakan,kode_tindakan,' . $kelompokTindakan->id,
             'kode_tarif' => 'required|string|max:50',
@@ -69,9 +71,10 @@ class KelompokTindakanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(KelompokTindakan $kelompokTindakan)
+    public function destroy($id)
     {
         try {
+            $kelompokTindakan = KelompokTindakan::findOrFail($id);
             $kelompokTindakan->delete();
 
             // Check if request is AJAX
