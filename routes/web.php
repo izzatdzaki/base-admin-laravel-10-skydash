@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TarifController;
+use App\Http\Controllers\KelompokTindakanController;
+use App\Http\Controllers\UnitController;
+use App\Http\Controllers\PorsiCbgsController;
+use App\Http\Controllers\PorsiJpController;
+use App\Http\Controllers\PorsiJpTmoController;
+use App\Http\Controllers\ParamedisController;
+use App\Http\Controllers\ParamedisPendampingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,37 +69,37 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.icons.index');
     });
 
-    Route::get('master-data/tarif', function () {
-        return view('master-data.tarif.index');
-    });
+    // Master Data Routes
+    Route::get('master-data/tarif', [TarifController::class, 'index'])->name('tarif.index');
+    Route::post('master-data/tarif', [TarifController::class, 'store'])->name('tarif.store');
+    Route::get('master-data/tarif/{id}/edit', [TarifController::class, 'edit'])->name('tarif.edit');
+    Route::put('master-data/tarif/{id}', [TarifController::class, 'update'])->name('tarif.update');
+    Route::delete('master-data/tarif/{id}', [TarifController::class, 'destroy'])->name('tarif.destroy');
 
-    Route::get('master-data/kelompok-tindakan', function () {
-        return view('master-data.kelompok-tindakan.index');
-    });
+    // master data kelompok tindakan
+    Route::get('master-data/kelompok-tindakan', [KelompokTindakanController::class, 'index'])->name('kelompok-tindakan.index');
+    Route::post('master-data/kelompok-tindakan', [KelompokTindakanController::class, 'store'])->name('kelompok-tindakan.store');
+    Route::get('master-data/kelompok-tindakan/{id}/edit', [KelompokTindakanController::class, 'edit'])->name('kelompok-tindakan.edit');
+    Route::put('master-data/kelompok-tindakan/{id}', [KelompokTindakanController::class, 'update'])->name('kelompok-tindakan.update');
+    Route::delete('master-data/kelompok-tindakan/{id}', [KelompokTindakanController::class, 'destroy'])->name('kelompok-tindakan.destroy');
 
-    Route::get('master-data/unit', function () {
-        return view('master-data.unit.index');
-    });
+    // master data unit
+    Route::resource('master-data/unit', UnitController::class);
 
-    Route::get('master-data/paramedis', function () {
-        return view('master-data.paramedis.index');
-    });
+    // master data porsi cbgs
+    Route::resource('master-data/porsi-cbgs', PorsiCbgsController::class);
 
-    Route::get('master-data/paramedis-pendamping', function () {
-        return view('master-data.paramedis-pendamping.index');
-    });
+    // master data porsi jp
+    Route::resource('master-data/porsi-jp', PorsiJpController::class);
 
-    Route::get('master-data/porsi-jp', function () {
-        return view('master-data.porsi-jp.index');
-    });
+    // master data porsi jp tmo
+    Route::resource('master-data/porsi-jp-tmo', PorsiJpTmoController::class);
 
-    Route::get('master-data/porsi-jp-tmo', function () {
-        return view('master-data.porsi-jp-tmo.index');
-    });
+    // master data paramedis
+    Route::resource('master-data/paramedis', ParamedisController::class);
 
-    Route::get('master-data/porsi-cbgs', function () {
-        return view('master-data.porsi-cbgs.index');
-    });
+    // master data paramedis pendamping
+    Route::resource('master-data/paramedis-pendamping', ParamedisPendampingController::class);
 
 });
 

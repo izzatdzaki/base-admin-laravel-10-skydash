@@ -27,7 +27,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
 </head>
-<body>
+  <body class="sidebar-fixed sidebar-toggle-display">
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
    @include('partials.navbar')
@@ -148,7 +148,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{{ asset('assets/images/faces/face1.jpg') }}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -156,7 +156,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="{{ asset('assets/images/faces/face2.jpg') }}" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -167,7 +167,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{{ asset('assets/images/faces/face3.jpg') }}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -175,7 +175,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src="{{ asset('assets/images/faces/face4.jpg') }}" alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -183,7 +183,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{{ asset('assets/images/faces/face5.jpg') }}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -191,7 +191,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src="{{ asset('assets/images/faces/face6.jpg') }}" alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -241,19 +241,52 @@
   <script src="{{ asset('assets/js/template.js') }}"></script>
   <script src="{{ asset('assets/js/settings.js') }}"></script>
   <script src="{{ asset('assets/js/todolist.js') }}"></script>
-
   <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="{{ asset('assets/vendors/chart.js/Chart.min.js') }}"></script>
-  <!-- End plugin js for this page -->
 
-  <!-- inject:js -->
-  <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-  <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-  <script src="{{ asset('assets/js/template.js') }}"></script>
-  <script src="{{ asset('assets/js/settings.js') }}"></script>
-  <script src="{{ asset('assets/js/todolist.js') }}"></script>
-  <!-- endinject -->
+  <!-- Ensure jQuery is available before custom scripts -->
+  <script>
+    // Wait for jQuery to be loaded
+    function ensureJQuery(callback) {
+      if (typeof jQuery !== 'undefined' && typeof $ !== 'undefined') {
+        callback();
+      } else {
+        setTimeout(function() {
+          ensureJQuery(callback);
+        }, 50);
+      }
+    }
+
+    // Custom js for sidebar toggle
+    ensureJQuery(function() {
+      $(document).ready(function() {
+        console.log('Sidebar toggle script loaded');
+
+        // Override the template.js minimize handler
+        $('[data-toggle="minimize"]').off('click').on("click", function(e) {
+          e.preventDefault();
+          console.log('Minimize button clicked');
+
+          // Simple toggle: hide/show sidebar
+          $('.sidebar').toggle();
+          $('.main-panel').toggleClass('full-width');
+
+          console.log('Sidebar visibility:', $('.sidebar').is(':visible'));
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .main-panel.full-width {
+      margin-left: 0 !important;
+      width: 100% !important;
+      transition: margin-left 0.3s ease, width 0.3s ease;
+    }
+
+    .sidebar {
+      transition: display 0.3s ease;
+    }
+  </style>
 
   <!-- Custom js for this page-->
   <script src="{{ asset('assets/js/chart.js') }}"></script>

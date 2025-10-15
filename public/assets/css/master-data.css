@@ -1,0 +1,693 @@
+/* Master Data Tarif Custom Styles */
+/* Mengikuti design system Skydash Admin Template */
+
+/* Modal Styling */
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.modal-header .close {
+    color: #ffffff;
+    opacity: 0.8;
+    text-shadow: none;
+}
+
+.modal-header .close:hover {
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Form Styling */
+.form-group label {
+    font-weight: 500;
+    color: #3a3a3a;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+}
+
+.form-control {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    outline: none;
+}
+
+.form-control:hover {
+    border-color: #d1d5db;
+}
+
+/* Button Styling */
+.btn-success {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4fd1c7 0%, #14b8a6 100%);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #38b2ac 0%, #0d9488 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 15px rgba(79, 209, 199, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 15px rgba(245, 101, 101, 0.3);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.btn-rounded {
+    border-radius: 25px !important;
+}
+
+/* Action buttons styling */
+.action-buttons {
+    gap: 4px;
+}
+
+.btn-action {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.btn-action:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+.btn-action i {
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Improved button sizing */
+.btn-sm {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    border-radius: 6px;
+    min-width: 36px;
+    min-height: 36px;
+}
+
+/* Ensure buttons are clickable on all devices */
+@media (pointer: coarse) {
+    .btn-action {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.75rem;
+    }
+}
+
+/* Table Styling */
+.table {
+    margin-bottom: 0;
+    table-layout: fixed;
+    width: 100%;
+    font-size: 0.7rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-weight: 600;
+    color: #ffffff;
+    border: none;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table td {
+    padding: 0.75rem 0.5rem;
+    vertical-align: middle;
+    border-top: 1px solid #e8e8e8;
+    font-size: 0.65rem;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Column widths untuk menghindari scroll horizontal */
+.table th:nth-child(1),
+.table td:nth-child(1) { width: 3%; } /* No */
+
+.table th:nth-child(2),
+.table td:nth-child(2) { width: 8%; } /* Kode */
+
+.table th:nth-child(3),
+.table td:nth-child(3) { width: 15%; } /* Instansi/Pelaksana */
+
+.table th:nth-child(4),
+.table td:nth-child(4) { width: 20%; } /* Tindakan */
+
+.table th:nth-child(5),
+.table td:nth-child(5) { width: 25%; } /* Detail */
+
+.table th:nth-child(6),
+.table td:nth-child(6) { width: 8%; } /* JS */
+
+.table th:nth-child(7),
+.table td:nth-child(7) { width: 8%; } /* JP */
+
+.table th:nth-child(8),
+.table td:nth-child(8) { width: 10%; } /* Total */
+
+.table th:nth-child(9),
+.table td:nth-child(9) { width: 3%; } /* Aksi */
+
+/* Styling untuk text alignment */
+.table td:nth-child(4),
+.table td:nth-child(5) {
+    text-align: left;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Info boxes styling */
+.instansi-info,
+.tindakan-info {
+    line-height: 1.2;
+}
+
+.instansi-info .font-weight-bold,
+.tindakan-info .font-weight-bold {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.instansi-info small,
+.tindakan-info small {
+    font-size: 0.6rem;
+    color: #6c757d;
+    display: block;
+}
+
+.table-bordered {
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table tbody tr {
+    cursor: default;
+    position: relative;
+}
+
+/* Ensure action buttons are always clickable */
+.table td:last-child {
+    position: relative;
+    z-index: 10;
+}
+
+.action-buttons {
+    position: relative;
+    z-index: 11;
+}
+
+/* Styling for numeric columns */
+.table td:nth-child(6),
+.table td:nth-child(7),
+.table td:nth-child(8) {
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    font-size: 0.6rem;
+}
+
+/* Highlight total tarif column */
+.table td:nth-child(8) {
+    background-color: rgba(102, 126, 234, 0.05);
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.15);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 45px 0 rgba(154, 161, 171, 0.25);
+}
+
+.card-title {
+    color: #2c2c2c;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-description {
+    color: #8c8c8c;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+/* Alert Styling */
+.alert-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 1px solid #b8dabc;
+    color: #155724;
+    border-radius: 8px;
+}
+
+/* Form validation states */
+.form-control.is-valid {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.valid-feedback {
+    display: block;
+    color: #28a745;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Loading animation */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Spinning icon animation */
+.ti-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Button disabled state */
+.btn-action:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Improve click area on mobile */
+@media (max-width: 768px) {
+    .action-buttons {
+        gap: 8px;
+    }
+    
+    .btn-action {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+    
+    .btn-action i {
+        font-size: 16px;
+    }
+}
+
+/* Table loading state */
+.table-loading {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.table-loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+}
+
+.table-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 11;
+}
+
+/* Small text styling */
+.form-text.text-muted {
+    color: #8c8c8c !important;
+    font-size: 0.75rem;
+}
+
+.text-danger {
+    color: #e53e3e !important;
+}
+
+/* Pagination styling */
+.pagination {
+    margin: 0;
+}
+
+.page-item {
+    margin: 0 1px;
+}
+
+.page-link {
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    color: #667eea;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    background-color: #667eea;
+    border-color: #667eea;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #667eea;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+/* Custom pagination size */
+.pagination-sm .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Compact pagination styling */
+.pagination-sm {
+    --bs-pagination-padding-x: 0.5rem;
+    --bs-pagination-padding-y: 0.25rem;
+    --bs-pagination-font-size: 0.75rem;
+    --bs-pagination-border-radius: 0.2rem;
+}
+
+.pagination-sm .page-link {
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Responsive pagination */
+@media (max-width: 768px) {
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .page-link {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.7rem;
+        min-width: 28px;
+        height: 28px;
+    }
+    
+    .text-muted {
+        text-align: center;
+        font-size: 0.75rem;
+    }
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Search Input Styling */
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-right: none;
+    color: #6c757d;
+}
+
+.input-group .form-control:focus {
+    border-left: none;
+    box-shadow: none;
+}
+
+.input-group .form-control:focus + .input-group-append .input-group-text {
+    border-color: #80bdff;
+}
+
+.input-group-append .btn-outline-secondary {
+    border-left: none;
+    border-color: #ced4da;
+    color: #6c757d;
+}
+
+.input-group-append .btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+/* Search Results Highlighting */
+.search-highlight {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Loading state for search */
+.search-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.search-loading::after {
+    content: " (sedang mencari...)";
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .table {
+        font-size: 0.6rem;
+    }
+    
+    .table th,
+    .table td {
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Allow text wrapping on smaller screens */
+    .table td {
+        white-space: normal;
+        word-wrap: break-word;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 1rem;
+    }
+    
+    .table {
+        font-size: 0.55rem;
+    }
+    
+    .table th,
+    .table td {
+        padding: 0.4rem 0.2rem;
+    }
+    
+    .btn-sm {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.65rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    /* Hide some columns on mobile to prevent overflow */
+    .table th:nth-child(5),
+    .table td:nth-child(5) {
+        display: none;
+    }
+    
+    .table th:nth-child(6),
+    .table td:nth-child(6) {
+        display: none;
+    }
+    
+    .table th:nth-child(7),
+    .table td:nth-child(7) {
+        display: none;
+    }
+}
